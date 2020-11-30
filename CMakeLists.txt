@@ -66,21 +66,21 @@ link_directories(${LIBS}/lua)
 
 include_directories(${CMAKE_CURRENT_LIST_DIR}/src)
 set(WAREHOUSE_FILES
-    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/warehouseparser.h
-    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/warehouseparser.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfieldparser.h
-    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfieldparser.cpp
+    src/warehouses/warehouseparser.h
+    src/warehouses/warehouseparser.cpp
+    src/warehouses/airfieldparser.h
+    src/warehouses/airfieldparser.cpp
 
-    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfield.h
-    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfield.cpp
+    src/warehouses/airfield.h
+    src/warehouses/airfield.cpp
     )
 source_group ("data\\parsers\\warehouses" FILES ${WAREHOUSE_FILES})
 
 set(MISSION_FILES
-    ${CMAKE_CURRENT_LIST_DIR}/src/mission/missionparser.h
-    ${CMAKE_CURRENT_LIST_DIR}/src/mission/missionparser.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/mission/mission.h
-    ${CMAKE_CURRENT_LIST_DIR}/src/mission/mission.cpp
+    src/mission/missionparser.h
+    src/mission/missionparser.cpp
+    src/mission/mission.h
+    src/mission/mission.cpp
     )
 source_group ("data\\parsers\\mission" FILES ${MISSION_FILES})
 
@@ -101,6 +101,20 @@ set(UI_FILES
     )
 source_group("ui" FILES ${UI_FILES})
 
+set(UI_MODEL
+    src/airfieldtreemodel.h
+    src/airfieldtreemodel.cpp
+    src/treeitembase.h
+    src/treeitembase.cpp
+    src/treeitemairfield.h
+    src/treeitemairfield.cpp
+    src/treeitemfuel.h
+    src/treeitemfuel.cpp
+    src/treeitemairframe.h
+    src/treeitemairframe.cpp
+    )
+source_group("models" FILES ${UI_MODEL})
+
 
 add_executable(DcsResourcesViewer
     ${UI_FILES}
@@ -109,6 +123,7 @@ add_executable(DcsResourcesViewer
     ${LUA_SOURCE}
     ${LUABRIDGE_HEADERS}
     ${MISSION_FILES}
+    ${UI_MODEL}
     resources.qrc
  )
 
