@@ -10,37 +10,112 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(LIBS ${CMAKE_CURRENT_SOURCE_DIR}/libs)
+include_directories(${LIBS})
 
-# QtCreator supports the following variables for Android, which are identical to qmake Android variables.
-# Check http://doc.qt.io/qt-5/deployment-android.html for more information.
-# They need to be set before the find_package(Qt5 ...) call.
 
-#if(ANDROID)
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-#    if (ANDROID_ABI STREQUAL "armeabi-v7a")
-#        set(ANDROID_EXTRA_LIBS
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so)
-#    endif()
-#endif()
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(ZLIB)
+find_package(libzip)
 
-if(ANDROID)
-  add_library(DcsResourcesViewer SHARED
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-  )
-else()
-  add_executable(DcsResourcesViewer
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-  )
-endif()
 
-target_link_libraries(DcsResourcesViewer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+#----------LUA-----------------
+include_directories(${LIBS}/Lua)
+file(GLOB LUA_SOURCE
+     ${LIBS}/Lua/*.h
+    ${LIBS}/Lua/*.hpp
+)
+source_group("Lua" FILES ${LUA_SOURCE})
+
+#----------LUA BRIDGE------------
+include_directories(${LIBS}/LuaBridge)
+set (LUABRIDGE_HEADERS
+  ${LIBS}/LuaBridge/List.h
+  ${LIBS}/LuaBridge/LuaBridge.h
+  ${LIBS}/LuaBridge/Map.h
+  ${LIBS}/LuaBridge/RefCountedObject.h
+  ${LIBS}/LuaBridge/RefCountedPtr.h
+  ${LIBS}/LuaBridge/UnorderedMap.h
+  ${LIBS}/LuaBridge/Vector.h
+  ${LIBS}/LuaBridge/Array.h
+)
+source_group ("Lua\\LuaBridge" FILES ${LUABRIDGE_HEADERS})
+
+include_directories(${LIBS}/LuaBridge/detail)
+set (LUABRIDGE_DETAIL_HEADERS
+  ${LIBS}/LuaBridge/detail/CFunctions.h
+  ${LIBS}/LuaBridge/detail/ClassInfo.h
+  ${LIBS}/LuaBridge/detail/Config.h
+  ${LIBS}/LuaBridge/detail/Constructor.h
+  ${LIBS}/LuaBridge/detail/dump.h
+  ${LIBS}/LuaBridge/detail/FuncTraits.h
+  ${LIBS}/LuaBridge/detail/Iterator.h
+  ${LIBS}/LuaBridge/detail/LuaException.h
+  ${LIBS}/LuaBridge/detail/LuaHelpers.h
+  ${LIBS}/LuaBridge/detail/LuaRef.h
+  ${LIBS}/LuaBridge/detail/Namespace.h
+  ${LIBS}/LuaBridge/detail/Stack.h
+  ${LIBS}/LuaBridge/detail/TypeList.h
+  ${LIBS}/LuaBridge/detail/TypeTraits.h
+  ${LIBS}/LuaBridge/detail/Userdata.h
+)
+source_group ("Lua\\LuaBridge\\detail" FILES ${LUABRIDGE_DETAIL_HEADERS})
+link_directories(${LIBS}/lua)
+
+include_directories(${CMAKE_CURRENT_LIST_DIR}/src)
+set(WAREHOUSE_FILES
+    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/warehouseparser.h
+    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/warehouseparser.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfieldparser.h
+    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfieldparser.cpp
+
+    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfield.h
+    ${CMAKE_CURRENT_LIST_DIR}/src/warehouses/airfield.cpp
+    )
+source_group ("data\\parsers\\warehouses" FILES ${WAREHOUSE_FILES})
+
+set(MISSION_FILES
+    ${CMAKE_CURRENT_LIST_DIR}/src/mission/missionparser.h
+    ${CMAKE_CURRENT_LIST_DIR}/src/mission/missionparser.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/mission/mission.h
+    ${CMAKE_CURRENT_LIST_DIR}/src/mission/mission.cpp
+    )
+source_group ("data\\parsers\\mission" FILES ${MISSION_FILES})
+
+set(DATA_FILES
+    src/mizinterface.h
+    src/mizinterface.cpp
+    src/datamanager.h
+    src/datamanager.cpp
+    src/LuaConstants.h
+    )
+source_group ("data" FILES ${DATA_FILES})
+
+set(UI_FILES
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.h
+    src/mainwindow.ui
+    )
+source_group("ui" FILES ${UI_FILES})
+
+
+add_executable(DcsResourcesViewer
+    ${UI_FILES}
+    ${DATA_FILES}
+    ${WAREHOUSE_FILES}
+    ${LUA_SOURCE}
+    ${LUABRIDGE_HEADERS}
+    ${MISSION_FILES}
+    resources.qrc
+ )
+
+#target_include_directories(DcsResourcesViewer PUBLIC  ${CMAKE_CURRENT_LIST_DIR}/src)
+#target_link_directories(DcsResourcesViewer PUBLIC   ${LIBS})
+target_link_libraries(DcsResourcesViewer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+    lua5.3.5-static
+    libzip::zip
+    ZLIB::ZLIB
+     )
