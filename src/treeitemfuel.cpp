@@ -1,4 +1,5 @@
 #include "treeitemfuel.h"
+#include "TreeItemVisitor.h"
 
 TreeItemFuel::TreeItemFuel(FuelReserve fuelReserve,TreeItemBase *parentItem):
     TreeItemBase(parentItem),
@@ -27,4 +28,9 @@ QVariant TreeItemFuel::data(int column) const
 int TreeItemFuel::columnCount() const
 {
     return 3;
+}
+
+void TreeItemFuel::accept(TreeItemVisitor *visitor)
+{
+     visitor->visit(this);
 }

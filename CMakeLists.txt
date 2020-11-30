@@ -98,6 +98,8 @@ set(UI_FILES
     src/mainwindow.cpp
     src/mainwindow.h
     src/mainwindow.ui
+    src/selectionvisitor.h
+    src/selectionvisitor.cpp
     )
 source_group("ui" FILES ${UI_FILES})
 
@@ -112,6 +114,7 @@ set(UI_MODEL
     src/treeitemfuel.cpp
     src/treeitemairframe.h
     src/treeitemairframe.cpp
+    src/treeitemvisitor.h
     )
 source_group("models" FILES ${UI_MODEL})
 

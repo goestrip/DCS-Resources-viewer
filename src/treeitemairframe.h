@@ -13,6 +13,8 @@ public:
 
     QVariant data(int column) const override;
     int columnCount() const override;
+    void accept(TreeItemVisitor* visitor);
+
 private:
     const TAirframeStocks m_stock;
     const TTYPE m_type;

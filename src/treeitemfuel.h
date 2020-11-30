@@ -11,6 +11,7 @@ public:
     QVariant data(int column) const override;
     int columnCount() const override;
 
+    void accept(TreeItemVisitor* visitor)override;
 private:
     const FuelReserve m_fuel;
 };

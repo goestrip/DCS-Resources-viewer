@@ -1,5 +1,5 @@
 #include "treeitembase.h"
-
+#include "TreeItemVisitor.h"
 
 TreeItemBase::TreeItemBase(TreeItemBase *parentItem):
     m_parentItem{parentItem}
@@ -53,4 +53,9 @@ int TreeItemBase::row() const
 TreeItemBase *TreeItemBase::parentItem()
 {
     return m_parentItem;
+}
+
+void TreeItemRoot::accept(TreeItemVisitor *visitor)
+{
+    //visitor->visit(this);
 }

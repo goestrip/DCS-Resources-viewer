@@ -19,6 +19,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void onTreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
+
 private:
 
     void openMizFile();

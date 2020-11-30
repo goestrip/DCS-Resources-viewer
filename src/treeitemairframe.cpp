@@ -1,4 +1,5 @@
 #include "treeitemairframe.h"
+#include "TreeItemVisitor.h"
 
 TreeItemAirframe::TreeItemAirframe(
         TTYPE type,
@@ -25,4 +26,9 @@ QVariant TreeItemAirframe::data(int column) const
 int TreeItemAirframe::columnCount() const
 {
     return 2;
+}
+
+void TreeItemAirframe::accept(TreeItemVisitor *visitor)
+{
+     visitor->visit(this);
 }

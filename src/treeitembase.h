@@ -3,6 +3,7 @@
 
 #include <QVector>
 #include <QVariant>
+class TreeItemVisitor;
 
 class TreeItemBase
 {
@@ -20,12 +21,20 @@ public:
     int row() const;
     TreeItemBase *parentItem();
 
+    virtual void accept(TreeItemVisitor* visitor) = 0;
+
 private:
     QVector<TreeItemBase*> m_childItems;
     //QVector<QVariant> m_itemData;
     TreeItemBase *m_parentItem;
 
     //QString m_name;
+};
+
+class TreeItemRoot : public TreeItemBase
+{
+    public:
+    virtual void accept(TreeItemVisitor* visitor) override;
 };
 
 #endif // TREEITEMBASE_H

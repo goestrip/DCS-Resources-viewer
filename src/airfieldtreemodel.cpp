@@ -4,7 +4,7 @@
 AirfieldTreeModel::AirfieldTreeModel(const TAirfields& airfieldData,  QObject *parent):
  QAbstractItemModel(parent)
 {
-    rootItem = new TreeItemBase();
+    rootItem = new TreeItemRoot();
     setupModelData(airfieldData, rootItem);
 }
 
@@ -78,6 +78,14 @@ QVariant AirfieldTreeModel::data(const QModelIndex &index, int role) const
     TreeItemBase *item = static_cast<TreeItemBase*>(index.internalPointer());
 
     return item->data(index.column());
+}
+
+TreeItemBase *AirfieldTreeModel::getItemData(const QModelIndex &index)
+{
+    if (!index.isValid())
+        return nullptr;
+     TreeItemBase *item = static_cast<TreeItemBase*>(index.internalPointer());
+     return item;
 }
 
 void AirfieldTreeModel::setupModelData(const TAirfields &airfieldData, TreeItemBase *parent)

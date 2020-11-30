@@ -6,6 +6,7 @@
 #include <QTextStream>
 
 #include "airfieldtreemodel.h"
+#include "selectionvisitor.h"
 
 //#include "lua.hpp"
 //#include "LuaBridge.h"
@@ -40,6 +41,21 @@ void MainWindow::openMizFile()
     else{
         airfieldsTreeModel = new AirfieldTreeModel(m_dataManager.getAirfields(), this);
         ui->AirfieldTreeView->setModel(airfieldsTreeModel);
+
+        QItemSelectionModel* treeViewSelectionModel= ui->AirfieldTreeView->selectionModel();
+        connect(treeViewSelectionModel, &QItemSelectionModel::currentChanged, this, & MainWindow::onTreeViewSelectionChanged);
+
+    }
+
+}
+
+void MainWindow::onTreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous)
+{
+    TreeItemBase* selection = airfieldsTreeModel->getItemData(current);
+    SelectionVisitor visitor;
+    if(nullptr != selection)
+    {
+        selection->accept(&visitor);
     }
 
 }

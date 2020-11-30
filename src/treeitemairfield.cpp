@@ -1,6 +1,7 @@
 #include "treeitemairfield.h"
 #include "treeitemfuel.h"
 #include "treeitemairframe.h"
+#include "TreeItemVisitor.h"
 
 TreeItemAirfield::TreeItemAirfield(TAirfield airfield, TreeItemBase *parentItem):
     TreeItemBase(parentItem),
@@ -35,5 +36,10 @@ QVariant TreeItemAirfield::data(int column) const
 
 int TreeItemAirfield::columnCount() const
 {
-   return 4;
+    return 4;
+}
+
+void TreeItemAirfield::accept(TreeItemVisitor *visitor)
+{
+    visitor->visit(this);
 }

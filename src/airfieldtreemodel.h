@@ -17,6 +17,7 @@ public:
     int columnCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
+    TreeItemBase* getItemData(const QModelIndex &index);
 
 private:
     void setupModelData(const TAirfields& airfieldData, TreeItemBase *parent);

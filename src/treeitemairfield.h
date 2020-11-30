@@ -11,6 +11,8 @@ public:
     QVariant data(int column) const override;
     int columnCount() const override;
 
+    void accept(TreeItemVisitor* visitor);
+
 private:
     TAirfield   m_airfield;
 };
