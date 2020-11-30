@@ -5,6 +5,8 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+#include "airfieldtreemodel.h"
+
 //#include "lua.hpp"
 //#include "LuaBridge.h"
 
@@ -36,13 +38,8 @@ void MainWindow::openMizFile()
         msgBox.exec();
     }
     else{
-        QMessageBox msgBox;
-        QString output;
-        QTextStream debugStream(&output);
-        debugStream<<"mission theatre: "<< m_dataManager.getTheatre()<<"\n";
-        debugStream<<"airfield count: "<< m_dataManager.getAirfields().count();
-        msgBox.setText(output);
-        msgBox.exec();
+        airfieldsTreeModel = new AirfieldTreeModel(m_dataManager.getAirfields(), this);
+        ui->AirfieldTreeView->setModel(airfieldsTreeModel);
     }
 
 }

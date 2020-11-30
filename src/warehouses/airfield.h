@@ -8,7 +8,7 @@
 struct FuelReserve
 {
     FuelReserve():gasoline{0},diesel{0}, jet_fuel{0}, isUnlimited{false}{};
-
+    int getTotal(){return gasoline + diesel + jet_fuel;}
     int gasoline;
     int diesel;
     int jet_fuel;
@@ -38,6 +38,9 @@ public:
 
     QString name() const;
     int Id() const;
+
+    TAirframeStocks choppers() const;
+    TAirframeStocks planes() const;
 
 private:
     int m_Id;

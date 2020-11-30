@@ -37,3 +37,13 @@ int Airfield::Id() const
 {
     return m_Id;
 }
+
+TAirframeStocks Airfield::choppers() const
+{
+    return m_choppers;
+}
+
+TAirframeStocks Airfield::planes() const
+{
+    return m_planes;
+}

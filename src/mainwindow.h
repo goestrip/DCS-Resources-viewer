@@ -9,6 +9,8 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 
+class AirfieldTreeModel;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -21,6 +23,7 @@ private:
 
     void openMizFile();
     Ui::MainWindow *ui;
+    AirfieldTreeModel* airfieldsTreeModel;
 
    DataManager  m_dataManager;
 
