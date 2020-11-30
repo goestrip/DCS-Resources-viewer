@@ -60,7 +60,7 @@ Airfields =
 		[38] = "Taftanaz",
 		[40] = "Wujah Al Hajar",
 	},
-	["Persian Gulf"]=
+        ["persiangulf"]=
 	{
 		[1] = "Abu Musa Island Airport",
 		[2] = "Bandar Abbas Intl",
