@@ -2,7 +2,7 @@
 #define AIRFIELDTREEMODEL_H
 
 #include <QAbstractItemModel>
-#include <warehouses/airfield.h>
+#include <airfield.h>
 #include "treeitembase.h"
 
 class AirfieldTreeModel : public QAbstractItemModel

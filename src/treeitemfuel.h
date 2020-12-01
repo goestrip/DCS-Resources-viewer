@@ -2,7 +2,7 @@
 #define TREEITEMFUEL_H
 
 #include "treeitembase.h"
-#include "warehouses/airfield.h"
+#include "airfield.h"
 
 class TreeItemFuel : public TreeItemBase
 {

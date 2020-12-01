@@ -13,7 +13,7 @@ public:
     static void ParseAirfieldDataBase(const luabridge::LuaRef& airfields);
 
 private:
-    static TAirframeStocks parseAircraft(const luabridge::LuaRef& ref);
+    static Inventory parseAircraft(const luabridge::LuaRef& ref);
 
 };
 

@@ -3,13 +3,12 @@
 
 TreeItemAirframe::TreeItemAirframe(
         TTYPE type,
-        TAirframeStocks stocks,
+        const Inventory& stocks,
         TreeItemBase *parentItem ):
 TreeItemBase(parentItem),
 m_stock{stocks},
 m_type{type}
 {
-
 }
 
 QVariant TreeItemAirframe::data(int column) const
@@ -21,6 +20,7 @@ QVariant TreeItemAirframe::data(int column) const
     if(1 == column){
         return m_stock.count();
     }
+    else return QVariant::Invalid;
 }
 
 int TreeItemAirframe::columnCount() const

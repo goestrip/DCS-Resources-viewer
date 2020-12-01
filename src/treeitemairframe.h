@@ -2,21 +2,22 @@
 #define TREEITEMAIRFRAME_H
 
 #include "treeitembase.h"
-#include "warehouses/airfield.h"
+#include "airfield.h"
+
 
 class TreeItemAirframe : public TreeItemBase
 {
 public:
     enum class TTYPE{PLANE, CHOPPER};
 
-    TreeItemAirframe(TTYPE type, TAirframeStocks stock, TreeItemBase *parentItem = nullptr);
+    TreeItemAirframe(TTYPE type, const Inventory& stock, TreeItemBase *parentItem = nullptr);
 
     QVariant data(int column) const override;
     int columnCount() const override;
-    void accept(TreeItemVisitor* visitor);
+    void accept(TreeItemVisitor* visitor)override;
 
 private:
-    const TAirframeStocks m_stock;
+    const Inventory m_stock;
     const TTYPE m_type;
 };
 

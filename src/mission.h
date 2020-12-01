@@ -3,6 +3,7 @@
 
 #include <QSharedPointer>
 #include <QString>
+#include <QDate>
 
 class Mission
 {
@@ -12,8 +13,13 @@ public:
 
     QString theatreName() const;
 
+
+    QDate missionDate() const;
+    void setMissionDate(const QDate &missionDate);
+
 private:
     const QString m_theatreName;
+    QDate         m_missionDate;
 };
 
 typedef QSharedPointer<Mission> TMission;

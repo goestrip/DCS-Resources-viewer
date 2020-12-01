@@ -48,21 +48,20 @@ TAirfields WarehouseParser::Parse(QString luaContent, const QString& mapName)
     if (!warehouse.isNil()) {
         LuaRef airports = warehouse[DCS_CST::airports.c_str()];
         if(!airports.isNil()){
-            int airFieldCount = 0;
-            for(int i = 1; i < 50; i++)
+
+            for(auto&& pair: pairs(airports))
             {
-                LuaRef luaAirfield = airports[i];
+                LuaRef luaAirfield = pair.second;
                 if(!luaAirfield.isNil())
                 {
-                    if(selectedMap.contains(i))
+                    if(selectedMap.contains(pair.first))
                     {
-                        TAirfield airfield = selectedMap.value(i);
+                        TAirfield airfield = selectedMap.value(pair.first);
                         AirfieldParser::ParseInto(airfield, luaAirfield);
                     }
-                    airFieldCount++;
+
                 }
             }
-            qDebug()<<airFieldCount<<" airfield found";
         }
         else {
             qWarning()<< "airport node not found";

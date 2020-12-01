@@ -2,8 +2,8 @@
 #define DATAMANAGER_H
 
 #include "mizinterface.h"
-#include "warehouses/airfield.h"
-#include "mission/mission.h"
+#include "airfield.h"
+#include "mission.h"
 
 class DataManager
 {
@@ -14,6 +14,7 @@ public:
 
     QString getTheatre()const;
     const TAirfields& getAirfields()const;
+    QDate   getMissionDate()const;
 
 private:
     TMizInterface   m_mizInterface;

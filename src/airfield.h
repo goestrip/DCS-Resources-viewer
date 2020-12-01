@@ -5,6 +5,8 @@
 #include <QSharedPointer>
 #include <QMap>
 
+#include "inventory.h"
+
 struct FuelReserve
 {
     FuelReserve():gasoline{0},diesel{0}, jet_fuel{0}, isUnlimited{false}{};
@@ -15,15 +17,6 @@ struct FuelReserve
     bool isUnlimited;
 };
 
-struct AirframeStock
-{
-    AirframeStock():count{0}{};
-    QString aicraftName;
-    unsigned int count;
-};
-typedef QVector<AirframeStock> TAirframeStocks;
-
-
 class Airfield
 {
 public:
@@ -33,21 +26,22 @@ public:
 
     FuelReserve fuelReserve() const;
     void setFuelReserve(const FuelReserve &fuelReserve);
-    void setPlanesStock(TAirframeStocks aircrafts);
-    void setChoppersStock(TAirframeStocks aircrafts);
+    void setPlanesStock(const Inventory& aircrafts);
+    void setChoppersStock(const Inventory& aircrafts);
 
     QString name() const;
     int Id() const;
 
-    TAirframeStocks choppers() const;
-    TAirframeStocks planes() const;
+    const Inventory& choppers() const;
+    const Inventory& planes() const;
 
 private:
     int m_Id;
     QString m_name;
     FuelReserve m_fuelReserve;
-    TAirframeStocks m_choppers;
-    TAirframeStocks m_planes;
+    Inventory m_choppers;
+    Inventory m_planes;
+
 };
 typedef QSharedPointer<Airfield> TAirfield;
 typedef QMap<int, TAirfield> TAirfields;

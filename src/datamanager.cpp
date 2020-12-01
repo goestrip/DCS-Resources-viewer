@@ -43,3 +43,11 @@ const TAirfields& DataManager::getAirfields()const
 {
     return m_airfields;
 }
+
+QDate DataManager::getMissionDate() const
+{
+    if(nullptr != m_mission){
+        return m_mission->missionDate();
+    }
+    else return QDate();
+}

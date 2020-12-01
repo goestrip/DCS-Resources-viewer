@@ -17,8 +17,8 @@ include_directories(${LIBS})
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
-find_package(ZLIB)
-find_package(libzip)
+find_package(ZLIB REQUIRED)
+find_package(libzip REQUIRED)
 
 
 #----------LUA-----------------
@@ -71,16 +71,13 @@ set(WAREHOUSE_FILES
     src/warehouses/airfieldparser.h
     src/warehouses/airfieldparser.cpp
 
-    src/warehouses/airfield.h
-    src/warehouses/airfield.cpp
     )
 source_group ("data\\parsers\\warehouses" FILES ${WAREHOUSE_FILES})
 
 set(MISSION_FILES
     src/mission/missionparser.h
     src/mission/missionparser.cpp
-    src/mission/mission.h
-    src/mission/mission.cpp
+
     )
 source_group ("data\\parsers\\mission" FILES ${MISSION_FILES})
 
@@ -90,6 +87,12 @@ set(DATA_FILES
     src/datamanager.h
     src/datamanager.cpp
     src/LuaConstants.h
+    src/airfield.h
+    src/airfield.cpp
+    src/mission.h
+    src/mission.cpp
+    src/inventory.h
+    src/inventory.cpp
     )
 source_group ("data" FILES ${DATA_FILES})
 

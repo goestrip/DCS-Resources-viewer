@@ -42,6 +42,8 @@ void MainWindow::openMizFile()
         airfieldsTreeModel = new AirfieldTreeModel(m_dataManager.getAirfields(), this);
         ui->AirfieldTreeView->setModel(airfieldsTreeModel);
 
+        ui->label_mission_date->setText(m_dataManager.getMissionDate().toString());
+
         QItemSelectionModel* treeViewSelectionModel= ui->AirfieldTreeView->selectionModel();
         connect(treeViewSelectionModel, &QItemSelectionModel::currentChanged, this, & MainWindow::onTreeViewSelectionChanged);
 

@@ -20,8 +20,13 @@ void AirfieldParser::ParseInto(TAirfield airfield, luabridge::LuaRef& ref)
         fuelReserve.jet_fuel = ref[DCS_CST::jet_fuel][DCS_CST::InitFuel].cast<int>();
         airfield->setFuelReserve(fuelReserve);
 
-        airfield->setChoppersStock(parseAircraft(ref[DCS_CST::aircrafts][DCS_CST::helicopters]));
-        airfield->setPlanesStock(parseAircraft(ref[DCS_CST::aircrafts][DCS_CST::planes]));
+        Inventory chopperInventory = parseAircraft(ref[DCS_CST::aircrafts][DCS_CST::helicopters]);
+        chopperInventory.setIsUnlimited(ref[DCS_CST::unlimitedAircrafts].cast<bool>());
+        airfield->setChoppersStock(chopperInventory);
+
+        Inventory planeInventory = parseAircraft(ref[DCS_CST::aircrafts][DCS_CST::planes]);
+        planeInventory.setIsUnlimited(ref[DCS_CST::unlimitedAircrafts].cast<bool>());
+        airfield->setPlanesStock(planeInventory);
     }
 
 }
@@ -32,24 +37,24 @@ void AirfieldParser::ParseAirfieldDataBase(const LuaRef& airfields)
 
 }
 
-TAirframeStocks AirfieldParser::parseAircraft(const LuaRef &aircraft)
+Inventory AirfieldParser::parseAircraft(const LuaRef &aircraft)
 {
-    TAirframeStocks airframeStocks;
+    Inventory airframeStocks;
     if(!aircraft.isNil())
     {
         for(auto&& pair: pairs(aircraft))
         {
-            AirframeStock airframes;
-            airframes.count = pair.second[DCS_CST::initialAmount].cast<int>();
+            InventoryItem airframes;
+            airframes.itemCount = pair.second[DCS_CST::initialAmount].cast<int>();
             if(pair.first.isNumber())
             {
                 qDebug() << pair.first.cast<int>();
             }
             else if (pair.first.isString())
             {
-                airframes.aicraftName = QString::fromStdString(pair.first.cast<std::string>());
+                airframes.itemName = QString::fromStdString(pair.first.cast<std::string>());
             }
-            airframeStocks.push_back(airframes);
+            airframeStocks.addItem(airframes);
         }
     }
     return airframeStocks;

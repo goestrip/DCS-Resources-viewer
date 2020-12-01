@@ -1,6 +1,7 @@
 #include "missionparser.h"
 #include <QDebug>
 #include "LuaConstants.h"
+#include <QDate>
 
 using namespace luabridge;
 
@@ -40,6 +41,16 @@ TMission MissionParser::Parse(QString luaContent)
         {
             QString theathreName = QString::fromStdString(theatre.cast<std::string>());
             mission = TMission(new Mission(theathreName));
+        }
+        LuaRef luaDate = luaMission[DCS_CST::date.c_str()];
+        if(!luaDate.isNil())
+        {
+            int year = luaDate[DCS_CST::Year.c_str()].cast<int>();
+            int month= luaDate[DCS_CST::Month.c_str()].cast<int>();
+            int day = luaDate[DCS_CST::Day.c_str()].cast<int>();
+
+            mission->setMissionDate(QDate(year, month, day));
+            qDebug()<<"mission date is :"<<mission->missionDate();
         }
     }
     else{

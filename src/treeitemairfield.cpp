@@ -21,15 +21,30 @@ QVariant TreeItemAirfield::data(int column) const
         return m_airfield->name();
     }
     if(1 == column){
-        return QString("fuel: ")
+        if(m_airfield->fuelReserve().isUnlimited)
+        {
+            return QString("fuel: ") + QChar(0x221E);
+        }
+        else return QString("fuel: ")
                 + QString::number(m_airfield->fuelReserve().getTotal())
                 +QString("t");
     }
     if(2 == column){
-        return QString("choppers: ") + QString::number(m_airfield->choppers().count());
+        if(m_airfield->choppers().isUnlimited()){
+            return QString("choppers: ") + QChar(0x221E);
+        }
+        else{
+            return QString("choppers: ") + QString::number(m_airfield->choppers().count());
+        }
     }
     if(3 == column){
-        return QString("planes: ") + QString::number( m_airfield->planes().count());
+        if(m_airfield->planes().isUnlimited()){
+            return QString("planes: ") + QChar(0x221E);
+        }
+        else{
+            return QString("planes: ") + QString::number(m_airfield->planes().count());
+        }
+
     }
     else return QVariant::Invalid;
 }

@@ -2,7 +2,7 @@
 #define TREEITEMAIRFIELD_H
 
 #include "treeitembase.h"
-#include "warehouses/airfield.h"
+#include "airfield.h"
 
 class TreeItemAirfield : public TreeItemBase
 {

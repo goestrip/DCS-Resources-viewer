@@ -17,12 +17,12 @@ void Airfield::setFuelReserve(const FuelReserve &fuelReserve)
     m_fuelReserve = fuelReserve;
 }
 
-void Airfield::setPlanesStock(TAirframeStocks aircrafts)
+void Airfield::setPlanesStock(const Inventory& aircrafts)
 {
     m_planes = aircrafts;
 }
 
-void Airfield::setChoppersStock(TAirframeStocks aircrafts)
+void Airfield::setChoppersStock(const Inventory& aircrafts)
 {
     m_choppers = aircrafts;
 }
@@ -38,12 +38,12 @@ int Airfield::Id() const
     return m_Id;
 }
 
-TAirframeStocks Airfield::choppers() const
+const Inventory& Airfield::choppers() const
 {
     return m_choppers;
 }
 
-TAirframeStocks Airfield::planes() const
+const Inventory& Airfield::planes() const
 {
     return m_planes;
 }
