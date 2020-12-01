@@ -1,0 +1,488 @@
+[
+  {
+    "name": "air",
+    "id": 1,
+    "children": [
+      {
+        "name": "plane",
+        "id": 1
+      },
+      {
+        "name": "chopper",
+        "id": 2
+      },
+      {
+        "name": "free fall",
+        "id": 3,
+        "children": [
+			{
+			"children": [
+			],
+			"id": 31,
+			"name": "Snars"
+		},
+		{
+			"children": [
+			],
+			"id": 35,
+			"name": "Parts"
+		},
+		{
+			"children": [
+			],
+			"id": 43,
+			"name": "FuelTank"
+		}
+		]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "weapons",
+    "children": [
+      {
+        "name": "missile",
+        "id": 4,
+        "children": [
+          {
+            "name": "AA_Missile",
+            "id": 7,
+            "children": []
+          },
+          {
+            "name": "AS_Missile",
+            "id": 8,
+            "children": []
+          },
+          {
+            "name": "SA_Missile",
+            "id": 34,
+            "children": []
+          },
+          {
+            "name": "SS_Missile",
+            "id": 11,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "bomb",
+        "names": [
+          {
+				"id": 1,
+				"name": "BetAB_150DS"
+			},
+			{
+				"id": 2,
+				"name": "BetAB_250"
+			},
+			{
+				"id": 3,
+				"name": "BetAB_500"
+			},
+			{
+				"id": 5,
+				"name": "FAB_100"
+			},
+			{
+				"id": 6,
+				"name": "FAB_250"
+			},
+			{
+				"id": 7,
+				"name": "FAB_500"
+			},
+			{
+				"id": 8,
+				"name": "FAB_1000"
+			},
+			{
+				"id": 9,
+				"name": "FAB_1500"
+			},
+			{
+				"id": 10,
+				"name": "FAB_5000"
+			},
+			{
+				"id": 11,
+				"name": "KAB_500"
+			},
+			{
+				"id": 12,
+				"name": "KAB_500Kr"
+			},
+			{
+				"id": 13,
+				"name": "KAB_500KrOD"
+			},
+			{
+				"id": 14,
+				"name": "KAB_1500Kr"
+			},
+			{
+				"id": 16,
+				"name": "ODAB_500PM"
+			},
+			{
+				"id": 17,
+				"name": "ODAB_250"
+			},
+			{
+				"id": 18,
+				"name": "RBK_250"
+			},
+			{
+				"id": 19,
+				"name": "RBK_250S"
+			},
+			{
+				"id": 20,
+				"name": "RBK_500AO"
+			},
+			{
+				"id": 21,
+				"name": "RBK_500SOAB"
+			},
+			{
+				"id": 22,
+				"name": "Puma"
+			},
+			{
+				"id": 23,
+				"name": "BL_755"
+			},
+			{
+				"id": 24,
+				"name": "GluB"
+			},
+			{
+				"id": 25,
+				"name": "NB_1"
+			},
+			{
+				"id": 26,
+				"name": "NB_2"
+			},
+			{
+				"id": 27,
+				"name": "Torpedo"
+			},
+			{
+				"id": 28,
+				"name": "XZAB_250"
+			},
+			{
+				"id": 29,
+				"name": "XZAB_500"
+			},
+			{
+				"id": 30,
+				"name": "Mk_81"
+			},
+			{
+				"id": 31,
+				"name": "Mk_82"
+			},
+			{
+				"id": 32,
+				"name": "Mk_83"
+			},
+			{
+				"id": 33,
+				"name": "Mk_84"
+			},
+			{
+				"id": 34,
+				"name": "M_117"
+			},
+			{
+				"id": 35,
+				"name": "CBU_97"
+			},
+			{
+				"id": 36,
+				"name": "GBU_10"
+			},
+			{
+				"id": 37,
+				"name": "GBU_11"
+			},
+			{
+				"id": 38,
+				"name": "GBU_12"
+			},
+			{
+				"id": 39,
+				"name": "GBU_16"
+			},
+			{
+				"id": 40,
+				"name": "GBU_17"
+			},
+			{
+				"id": 41,
+				"name": "GBU_24"
+			},
+			{
+				"id": 42,
+				"name": "GBU_15"
+			},
+			{
+				"id": 43,
+				"name": "GBU_27"
+			},
+			{
+				"id": 44,
+				"name": "GBU_22"
+			},
+			{
+				"id": 45,
+				"name": "ROCKEYE"
+			},
+			{
+				"id": 47,
+				"name": "AGM_62"
+			},
+			{
+				"id": 48,
+				"name": "GBU_28"
+			},
+			{
+				"id": 49,
+				"name": "GBU_29"
+			},
+			{
+				"id": 50,
+				"name": "GBU_30"
+			},
+			{
+				"id": 53,
+				"name": "FAB_100P"
+			},
+			{
+				"id": 54,
+				"name": "FAB_250P"
+			},
+			{
+				"id": 55,
+				"name": "FAB_500P"
+			},
+			{
+				"id": 56,
+				"name": "FAB_500_3"
+			},
+			{
+				"id": 57,
+				"name": "MW_1"
+			},
+			{
+				"id": 58,
+				"name": "PB_250"
+			},
+			{
+				"id": 59,
+				"name": "Z_BAK_3"
+			},
+			{
+				"id": 61,
+				"name": "Mk_50_Torpedo"
+			},
+			{
+				"id": 62,
+				"name": "Durandal"
+			},
+			{
+				"id": 63,
+				"name": "SAB_100"
+			},
+			{
+				"id": 64,
+				"name": "LUU_2B"
+			},
+			{
+				"id": 65,
+				"name": "AO_2_5RT"
+			},
+			{
+				"id": 66,
+				"name": "PTAB_2_5KO"
+			},
+			{
+				"id": 69,
+				"name": "BDU_33"
+			},
+			{
+				"id": 70,
+				"name": "BDU_50LD"
+			},
+			{
+				"id": 71,
+				"name": "BDU_50HD"
+			},
+			{
+				"id": 72,
+				"name": "BDU_50LGB"
+			},
+			{
+				"id": 73,
+				"name": "BDU_56LD"
+			},
+			{
+				"id": 74,
+				"name": "BDU_56LGB"
+			},
+			{
+				"id": 75,
+				"name": "MK_82AIR"
+			},
+			{
+				"id": 76,
+				"name": "LUU_19"
+			},
+			{
+				"id": 77,
+				"name": "CBU_87"
+			},
+			{
+				"id": 78,
+				"name": "CBU_89"
+			},
+			{
+				"id": 79,
+				"name": "MK_82SNAKEYE"
+			},
+			{
+				"id": 80,
+				"name": "LUU_2AB"
+			},
+			{
+				"id": 81,
+				"name": "LUU_2BB"
+			},
+			{
+				"id": 82,
+				"name": "LUU_1"
+			},
+			{
+				"id": 83,
+				"name": "LUU_5"
+			},
+			{
+				"id": 84,
+				"name": "LUU_6"
+			},
+			{
+				"id": 85,
+				"name": "GBU_31"
+			},
+			{
+				"id": 86,
+				"name": "GBU_38"
+			},
+			{
+				"id": 87,
+				"name": "CBU_105"
+			},
+			{
+				"id": 88,
+				"name": "CBU_103"
+			},
+			{
+				"id": 89,
+				"name": "CBU_104"
+			},
+			{
+				"id": 90,
+				"name": "AN_M64"
+			},
+			{
+				"id": 91,
+				"name": "RBK_500U"
+			},
+			{
+				"id": 92,
+				"name": "GBU_31_V_3B"
+			},
+			{
+				"id": 93,
+				"name": "CBU_52B"
+			}
+        ],
+        "id": 5,
+        "children": [
+          {
+            "children": [],
+            "id": 9,
+            "name": "Bomb_A"
+          },
+          {
+            "children": [],
+            "id": 36,
+            "name": "Bomb_Guided"
+          },
+          {
+            "children": [],
+            "id": 37,
+            "name": "Bomb_BetAB"
+          },
+          {
+            "children": [],
+            "id": 38,
+            "name": "Bomb_Cluster"
+          },
+          {
+            "children": [],
+            "id": 39,
+            "name": "Bomb_Antisubmarine"
+          },
+          {
+            "children": [],
+            "id": 40,
+            "name": "Bomb_ODAB"
+          },
+          {
+            "children": [],
+            "id": 41,
+            "name": "Bomb_Fire"
+          },
+          {
+            "children": [],
+            "id": 42,
+            "name": "Bomb_Nuclear"
+          },
+          {
+            "children": [],
+            "id": 49,
+            "name": "Bomb_Lighter"
+          }
+        ]
+      },
+      {
+        "name": "shell",
+        "id": 6,
+        "children": []
+      },
+	 {
+		"children": [
+		],
+		"id": 15,
+		"name": "Container"
+	 } ,
+    {
+        "children": [
+        ],
+        "id": 7,
+        "name": "NURS"
+    },
+    {
+        "children": [
+        ],
+        "id": 8,
+        "name": "Torpedo"
+    }
+    ]
+  }
+]

@@ -28,12 +28,14 @@ public:
     void setFuelReserve(const FuelReserve &fuelReserve);
     void setPlanesStock(const Inventory& aircrafts);
     void setChoppersStock(const Inventory& aircrafts);
+    void setEquipmentStock(const Inventory& equipment);
 
     QString name() const;
     int Id() const;
 
     const Inventory& choppers() const;
     const Inventory& planes() const;
+    const Inventory& equipment() const;
 
 private:
     int m_Id;
@@ -41,6 +43,7 @@ private:
     FuelReserve m_fuelReserve;
     Inventory m_choppers;
     Inventory m_planes;
+    Inventory m_equipments;
 
 };
 typedef QSharedPointer<Airfield> TAirfield;

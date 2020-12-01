@@ -27,6 +27,11 @@ void Airfield::setChoppersStock(const Inventory& aircrafts)
     m_choppers = aircrafts;
 }
 
+void Airfield::setEquipmentStock(const Inventory &equipment)
+{
+    m_equipments = equipment;
+}
+
 
 QString Airfield::name() const
 {
@@ -46,4 +51,9 @@ const Inventory& Airfield::choppers() const
 const Inventory& Airfield::planes() const
 {
     return m_planes;
+}
+
+const Inventory &Airfield::equipment() const
+{
+    return m_equipments;
 }

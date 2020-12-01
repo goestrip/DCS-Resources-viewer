@@ -5,6 +5,7 @@ class TreeItemFuel;
 class TreeItemAirfield;
 class TreeItemBase;
 class TreeItemAirframe;
+class TreeItemEquipment;
 
 class TreeItemVisitor{
 public:
@@ -12,6 +13,7 @@ public:
     virtual void visit(TreeItemFuel* item)=0;
     virtual void visit(TreeItemAirfield* item)=0;
     virtual void visit(TreeItemAirframe* item)=0;
+    virtual void visit(TreeItemEquipment* item)=0;
 };
 
 #endif // TREEITEMVISITOR_H

@@ -30,5 +30,10 @@ int TreeItemAirframe::columnCount() const
 
 void TreeItemAirframe::accept(TreeItemVisitor *visitor)
 {
-     visitor->visit(this);
+    visitor->visit(this);
+}
+
+const Inventory * TreeItemAirframe::getInventory() const
+{
+   return &m_stock ;
 }

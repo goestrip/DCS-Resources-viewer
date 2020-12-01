@@ -19,6 +19,8 @@ public:
 
     unsigned int count()const;
 
+    const TInventoryItemList& getInventoryContent()const;
+
     bool isUnlimited() const;
     void setIsUnlimited(bool value);
     void addItem(const InventoryItem& item);

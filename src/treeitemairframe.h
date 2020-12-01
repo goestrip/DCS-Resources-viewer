@@ -16,6 +16,7 @@ public:
     int columnCount() const override;
     void accept(TreeItemVisitor* visitor)override;
 
+    const Inventory *  getInventory()const;
 private:
     const Inventory m_stock;
     const TTYPE m_type;

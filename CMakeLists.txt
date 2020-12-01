@@ -70,6 +70,8 @@ set(WAREHOUSE_FILES
     src/warehouses/warehouseparser.cpp
     src/warehouses/airfieldparser.h
     src/warehouses/airfieldparser.cpp
+    src/warehouses/jsondbparser.h
+    src/warehouses/jsondbparser.cpp
 
     )
 source_group ("data\\parsers\\warehouses" FILES ${WAREHOUSE_FILES})
@@ -118,6 +120,10 @@ set(UI_MODEL
     src/treeitemairframe.h
     src/treeitemairframe.cpp
     src/treeitemvisitor.h
+    src/inventorymodel.h
+    src/inventorymodel.cpp
+    src/treeitemequipment.h
+    src/treeitemequipment.cpp
     )
 source_group("models" FILES ${UI_MODEL})
 

@@ -19,7 +19,9 @@ const std::string unlimitedAircrafts= "unlimitedAircrafts";
 const std::string aircrafts = "aircrafts";
 const std::string helicopters = "helicopters";
 const std::string planes = "planes";
+const std::string weapons = "weapons";
 const std::string initialAmount = "initialAmount";
+const std::string wsType = "wsType";
 
 const std::string mission = "mission";
 const std::string theatre = "theatre";

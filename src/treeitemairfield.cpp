@@ -2,6 +2,7 @@
 #include "treeitemfuel.h"
 #include "treeitemairframe.h"
 #include "TreeItemVisitor.h"
+#include "treeitemequipment.h"
 
 TreeItemAirfield::TreeItemAirfield(TAirfield airfield, TreeItemBase *parentItem):
     TreeItemBase(parentItem),
@@ -12,6 +13,7 @@ TreeItemAirfield::TreeItemAirfield(TAirfield airfield, TreeItemBase *parentItem)
         appendChild(new TreeItemFuel(airfield->fuelReserve(), this));
         appendChild(new TreeItemAirframe(TreeItemAirframe::TTYPE::CHOPPER, airfield->choppers(), this));
         appendChild(new TreeItemAirframe(TreeItemAirframe::TTYPE::PLANE ,airfield->planes(), this));
+        appendChild(new TreeItemEquipment(airfield->equipment(), this));
     }
 }
 

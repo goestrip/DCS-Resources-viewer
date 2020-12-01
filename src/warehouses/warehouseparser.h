@@ -5,7 +5,7 @@
 #include "lua.hpp"
 #include "LuaBridge/LuaBridge.h"
 #include "airfield.h"
-
+#include "jsondbparser.h"
 
 class WarehouseParser
 {
@@ -17,6 +17,7 @@ public:
 
 private:
     TAllMapAirfields loadAirfields();
+    ObjectDBWrapper    loadDbItem();
 
     lua_State* lua;
 };

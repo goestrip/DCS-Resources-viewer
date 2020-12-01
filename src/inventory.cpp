@@ -27,3 +27,8 @@ unsigned int Inventory::count()const
 {
     return m_itemCount;
 }
+
+const TInventoryItemList &Inventory::getInventoryContent() const
+{
+    return m_items;
+}

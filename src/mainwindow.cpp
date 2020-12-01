@@ -4,9 +4,11 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QSortFilterProxyModel>
 
 #include "airfieldtreemodel.h"
 #include "selectionvisitor.h"
+#include "inventorymodel.h"
 
 //#include "lua.hpp"
 //#include "LuaBridge.h"
@@ -41,11 +43,20 @@ void MainWindow::openMizFile()
     else{
         airfieldsTreeModel = new AirfieldTreeModel(m_dataManager.getAirfields(), this);
         ui->AirfieldTreeView->setModel(airfieldsTreeModel);
+        QItemSelectionModel* treeViewSelectionModel= ui->AirfieldTreeView->selectionModel();
+        connect(treeViewSelectionModel, &QItemSelectionModel::currentChanged, this, & MainWindow::onTreeViewSelectionChanged);
+
+        inventoryModel = new InventoryModel();
+        inventoryProxyModel = new QSortFilterProxyModel(this);
+        inventoryProxyModel->setSourceModel(inventoryModel);
+
+        ui->AircraftTableView->setModel(inventoryProxyModel);
+        ui->AircraftTableView->setSortingEnabled(true);
+        ui->AircraftTableView->horizontalHeader()->setSectionsClickable(true);
+        ui->AircraftTableView->sortByColumn(1, Qt::SortOrder::AscendingOrder);
 
         ui->label_mission_date->setText(m_dataManager.getMissionDate().toString());
 
-        QItemSelectionModel* treeViewSelectionModel= ui->AirfieldTreeView->selectionModel();
-        connect(treeViewSelectionModel, &QItemSelectionModel::currentChanged, this, & MainWindow::onTreeViewSelectionChanged);
 
     }
 
@@ -53,11 +64,16 @@ void MainWindow::openMizFile()
 
 void MainWindow::onTreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous)
 {
+    Q_UNUSED(previous);
     TreeItemBase* selection = airfieldsTreeModel->getItemData(current);
     SelectionVisitor visitor;
     if(nullptr != selection)
     {
         selection->accept(&visitor);
+        if(nullptr != visitor.getInventory())
+        {
+            inventoryModel->setCustomData(*visitor.getInventory());
+        }
     }
 
 }

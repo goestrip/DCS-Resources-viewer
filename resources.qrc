@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>resources/airfield_names.lua</file>
+        <file>resources/object_db.json</file>
     </qresource>
 </RCC>

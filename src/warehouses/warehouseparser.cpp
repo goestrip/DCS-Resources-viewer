@@ -28,6 +28,10 @@ WarehouseParser::~WarehouseParser()
 TAirfields WarehouseParser::Parse(QString luaContent, const QString& mapName)
 {
     TAllMapAirfields maps = loadAirfields();
+    ObjectDBWrapper dbWrapper = loadDbItem();
+
+    AirfieldParser airfieldParser(dbWrapper);
+
     TAirfields selectedMap;
     if(!maps.contains(mapName)){
         qWarning() << "map "<< mapName<< " not found in the library";
@@ -57,7 +61,7 @@ TAirfields WarehouseParser::Parse(QString luaContent, const QString& mapName)
                     if(selectedMap.contains(pair.first))
                     {
                         TAirfield airfield = selectedMap.value(pair.first);
-                        AirfieldParser::ParseInto(airfield, luaAirfield);
+                        airfieldParser.ParseInto(airfield, luaAirfield);
                     }
 
                 }
@@ -111,5 +115,16 @@ TAllMapAirfields WarehouseParser::loadAirfields()
         qWarning()<<"can't open file syria";
     }
     return allMapsAirfield;
+}
+
+
+ObjectDBWrapper WarehouseParser::loadDbItem()
+{
+    JsonDbParser dbParser;
+    QFile jsonDbFile(":/resources/object_db.json");
+    if(jsonDbFile.open(QIODevice::ReadOnly))
+    {
+        return dbParser.parse(jsonDbFile.readAll());
+    }
 }
 
