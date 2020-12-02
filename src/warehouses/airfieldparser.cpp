@@ -35,6 +35,7 @@ void AirfieldParser::ParseInto(TAirfield airfield, luabridge::LuaRef& ref)const
             if(!ref[DCS_CST::weapons].isNil())
             {
                 Inventory equipment = parseEquipment(ref[DCS_CST::weapons]);
+                equipment.setIsUnlimited(ref[DCS_CST::unlimitedMunitions].cast<bool>());
                 airfield->setEquipmentStock(equipment);
             }
         }  catch (QException ex) {

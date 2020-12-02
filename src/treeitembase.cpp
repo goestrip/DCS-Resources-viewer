@@ -29,10 +29,10 @@ int TreeItemBase::childCount() const
     return m_childItems.count();
 }
 
-int TreeItemBase::columnCount() const
-{
-    return 4;
-}
+//int TreeItemBase::columnCount() const
+//{
+//    return 4;
+//}
 
 QVariant TreeItemBase::data(int column) const
 {

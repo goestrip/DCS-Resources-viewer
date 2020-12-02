@@ -4,6 +4,7 @@
 #include <QSharedPointer>
 #include <QString>
 #include <QDate>
+#include "coalition.h"
 
 class Mission
 {
@@ -17,9 +18,17 @@ public:
     QDate missionDate() const;
     void setMissionDate(const QDate &missionDate);
 
+
+    Coalition& red() ;
+    Coalition& blue() ;
+
+
 private:
     const QString m_theatreName;
     QDate         m_missionDate;
+
+    Coalition   m_red;
+    Coalition   m_blue;
 };
 
 typedef QSharedPointer<Mission> TMission;

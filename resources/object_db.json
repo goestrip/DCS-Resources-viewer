@@ -40,37 +40,501 @@
   {
     "id": 4,
     "name": "weapons",
-    "children": [
-      {
-        "name": "missile",
-        "id": 4,
-        "children": [
-          {
-            "name": "AA_Missile",
-            "id": 7,
-            "children": []
-          },
-          {
-            "name": "AS_Missile",
-            "id": 8,
-            "children": []
-          },
-          {
-            "name": "SA_Missile",
-            "id": 34,
-            "children": []
-          },
-          {
-            "name": "SS_Missile",
-            "id": 11,
-            "children": []
-          }
-        ]
-      },
-      {
-        "name": "bomb",
-        "names": [
-          {
+	"children": [
+	  {
+		"name": "missile",
+		"id": 4,
+		"children": [
+		  {
+			"name": "AA_Missile",
+			"id": 7,
+			"children": [
+			{
+				"id": 143,
+				"name": "CATM_9"
+			},
+			{
+				"id": 135,
+				"name": "AIM_9P"
+			},
+			{
+				"id": 136,
+				"name": "AIM_9X"
+			},
+			{
+				"id": 137,
+				"name": "MIM_72G"
+			},
+			{
+				"id": 138,
+				"name": "AGM_65H"
+			},
+			{
+				"id": 139,
+				"name": "AGM_65G"
+			},
+			{
+				"id": 140,
+				"name": "TGM_65G"
+			},
+			{
+				"id": 141,
+				"name": "TGM_65D"
+			},
+			{
+				"id": 142,
+				"name": "CATM_65K"
+			},
+			{
+				"id": 1,
+				"name": "R_550"
+			},
+			{
+				"id": 2,
+				"name": "MICA_T"
+			},
+			{
+				"id": 3,
+				"name": "MICA_R"
+			},
+			{
+				"id": 4,
+				"name": "Super_530D"
+			},
+			{
+				"id": 5,
+				"name": "P_98"
+			},
+			{
+				"id": 6,
+				"name": "P_4R"
+			},
+			{
+				"id": 7,
+				"name": "P_40R"
+			},
+			{
+				"id": 9,
+				"name": "P_24R"
+			},
+			{
+				"id": 10,
+				"name": "P_60"
+			},
+			{
+				"id": 11,
+				"name": "P_33E"
+			},
+			{
+				"id": 12,
+				"name": "P_27AE"
+			},
+			{
+				"id": 13,
+				"name": "P_27P"
+			},
+			{
+				"id": 14,
+				"name": "P_27PE"
+			},
+			{
+				"id": 15,
+				"name": "P_27T"
+			},
+			{
+				"id": 16,
+				"name": "P_27TE"
+			},
+			{
+				"id": 17,
+				"name": "P_27EM"
+			},
+			{
+				"id": 18,
+				"name": "P_73"
+			},
+			{
+				"id": 19,
+				"name": "P_77"
+			},
+			{
+				"id": 20,
+				"name": "P_37"
+			},
+			{
+				"id": 21,
+				"name": "AIM_7"
+			},
+			{
+				"id": 22,
+				"name": "AIM_9"
+			},
+			{
+				"id": 23,
+				"name": "AIM_54"
+			},
+			{
+				"id": 26,
+				"name": "P_24T"
+			},
+			{
+				"id": 27,
+				"name": "P_40T"
+			},
+			{
+				"id": 28,
+				"name": "SeaSparrow"
+			}
+			]
+		  },
+		  {
+			"name": "AS_Missile",
+			"id": 8,
+			"children": [
+			{
+				"id": 137,
+				"name": "MIM_72G"
+			},
+			{
+				"id": 138,
+				"name": "AGM_65H"
+			},
+			{
+				"id": 139,
+				"name": "AGM_65G"
+			},
+			{
+				"id": 140,
+				"name": "TGM_65G"
+			},
+			{
+				"id": 141,
+				"name": "TGM_65D"
+			},
+			{
+				"id": 142,
+				"name": "CATM_65K"
+			},
+			{
+				"id": 39,
+				"name": "AGM_114K"
+			},
+			{
+				"id": 40,
+				"name": "AGM_119"
+			},
+			{
+				"id": 41,
+				"name": "X_22"
+			},
+			{
+				"id": 42,
+				"name": "X_29TE"
+			},
+			{
+				"id": 43,
+				"name": "X_23"
+			},
+			{
+				"id": 44,
+				"name": "X_28"
+			},
+			{
+				"id": 45,
+				"name": "X_25ML"
+			},
+			{
+				"id": 46,
+				"name": "X_58"
+			},
+			{
+				"id": 47,
+				"name": "X_25MP"
+			},
+			{
+				"id": 48,
+				"name": "AT_6"
+			},
+			{
+				"id": 49,
+				"name": "X_29L"
+			},
+			{
+				"id": 50,
+				"name": "X_55"
+			},
+			{
+				"id": 51,
+				"name": "X_65"
+			},
+			{
+				"id": 52,
+				"name": "X_15"
+			},
+			{
+				"id": 53,
+				"name": "X_31A"
+			},
+			{
+				"id": 54,
+				"name": "X_59M"
+			},
+			{
+				"id": 55,
+				"name": "X_35"
+			},
+			{
+				"id": 56,
+				"name": "X_41"
+			},
+			{
+				"id": 57,
+				"name": "Vikhr"
+			},
+			{
+				"id": 58,
+				"name": "Vikhr_M"
+			},
+			{
+				"id": 59,
+				"name": "AGM_114"
+			},
+			{
+				"id": 60,
+				"name": "AGM_45"
+			},
+			{
+				"id": 61,
+				"name": "AGM_65K"
+			},
+			{
+				"id": 62,
+				"name": "AGM_84A"
+			},
+			{
+				"id": 63,
+				"name": "AGM_84E"
+			},
+			{
+				"id": 64,
+				"name": "AGM_86"
+			},
+			{
+				"id": 65,
+				"name": "AGM_88"
+			},
+			{
+				"id": 66,
+				"name": "Sea_Eagle"
+			},
+			{
+				"id": 67,
+				"name": "SAV611"
+			},
+			{
+				"id": 68,
+				"name": "AGM_122"
+			},
+			{
+				"id": 69,
+				"name": "AGM_123"
+			},
+			{
+				"id": 70,
+				"name": "AGM_65E"
+			},
+			{
+				"id": 71,
+				"name": "AGM_130"
+			},
+			{
+				"id": 72,
+				"name": "ALARM"
+			},
+			{
+				"id": 73,
+				"name": "X_23L"
+			},
+			{
+				"id": 74,
+				"name": "X_25MR"
+			},
+			{
+				"id": 75,
+				"name": "X_29T"
+			},
+			{
+				"id": 76,
+				"name": "X_31P"
+			},
+			{
+				"id": 77,
+				"name": "AGM_65D"
+			},
+			{
+				"id": 78,
+				"name": "Kormoran"
+			}
+			]
+		  },
+		  {
+			"name": "SA_Missile",
+			"id": 34,
+			"children": [
+			{
+				"id": 79,
+				"name": "SM_2"
+			},
+			{
+				"id": 80,
+				"name": "SA5B55"
+			},
+			{
+				"id": 81,
+				"name": "SA48H6E2"
+			},
+			{
+				"id": 82,
+				"name": "SA9M82"
+			},
+			{
+				"id": 83,
+				"name": "SA9M83"
+			},
+			{
+				"id": 84,
+				"name": "SA3M9M"
+			},
+			{
+				"id": 85,
+				"name": "SA9M33"
+			},
+			{
+				"id": 86,
+				"name": "SA9M31"
+			},
+			{
+				"id": 87,
+				"name": "SA9M38M1"
+			},
+			{
+				"id": 88,
+				"name": "SA9M333"
+			},
+			{
+				"id": 89,
+				"name": "SA9M330"
+			},
+			{
+				"id": 90,
+				"name": "SA9M311"
+			},
+			{
+				"id": 91,
+				"name": "Igla_1E"
+			},
+			{
+				"id": 92,
+				"name": "MIM_104"
+			},
+			{
+				"id": 93,
+				"name": "FIM_92C"
+			}
+			]
+		  },
+		  {
+			"name": "SS_Missile",
+			"id": 11,
+			"children": [
+			{
+				"id": 118,
+				"name": "P_35"
+			},
+			{
+				"id": 119,
+				"name": "P_500"
+			},
+			{
+				"id": 120,
+				"name": "P_700"
+			},
+			{
+				"id": 121,
+				"name": "P_15U"
+			},
+			{
+				"id": 122,
+				"name": "P_120"
+			},
+			{
+				"id": 123,
+				"name": "R_85"
+			},
+			{
+				"id": 124,
+				"name": "R_85U"
+			},
+			{
+				"id": 125,
+				"name": "BGM_109B"
+			},
+			{
+				"id": 126,
+				"name": "AGM_84S"
+			},
+			{
+				"id": 127,
+				"name": "MALUTKA"
+			},
+			{
+				"id": 128,
+				"name": "KONKURS"
+			},
+			{
+				"id": 129,
+				"name": "P_9M117"
+			},
+			{
+				"id": 130,
+				"name": "TOW"
+			},
+			{
+				"id": 131,
+				"name": "M26"
+			},
+			{
+				"id": 132,
+				"name": "AGM_154"
+			},
+			{
+				"id": 133,
+				"name": "S_25L"
+			},
+			{
+				"id": 96,
+				"name": "SCUD_RAKETA"
+			}
+			]
+		  },
+			{
+				"children": [
+				],
+				"id": 100,
+				"name": "AA training"
+			},
+			{
+				"children": [
+				],
+				"id": 101,
+				"name": "AS training"
+			}
+		]
+	  },
+	  {
+		"name": "bomb",
+		"names": [
+		  {
 				"id": 1,
 				"name": "BetAB_150DS"
 			},
@@ -410,79 +874,167 @@
 				"id": 93,
 				"name": "CBU_52B"
 			}
-        ],
-        "id": 5,
-        "children": [
-          {
-            "children": [],
-            "id": 9,
-            "name": "Bomb_A"
-          },
-          {
-            "children": [],
-            "id": 36,
-            "name": "Bomb_Guided"
-          },
-          {
-            "children": [],
-            "id": 37,
-            "name": "Bomb_BetAB"
-          },
-          {
-            "children": [],
-            "id": 38,
-            "name": "Bomb_Cluster"
-          },
-          {
-            "children": [],
-            "id": 39,
-            "name": "Bomb_Antisubmarine"
-          },
-          {
-            "children": [],
-            "id": 40,
-            "name": "Bomb_ODAB"
-          },
-          {
-            "children": [],
-            "id": 41,
-            "name": "Bomb_Fire"
-          },
-          {
-            "children": [],
-            "id": 42,
-            "name": "Bomb_Nuclear"
-          },
-          {
-            "children": [],
-            "id": 49,
-            "name": "Bomb_Lighter"
-          }
-        ]
-      },
-      {
-        "name": "shell",
-        "id": 6,
-        "children": []
-      },
+		],
+		"id": 5,
+		"children": [
+		  {
+			"children": [],
+			"id": 9,
+			"name": "Bomb_A"
+		  },
+		  {
+			"children": [],
+			"id": 36,
+			"name": "Bomb_Guided"
+		  },
+		  {
+			"children": [],
+			"id": 37,
+			"name": "Bomb_BetAB"
+		  },
+		  {
+			"children": [],
+			"id": 38,
+			"name": "Bomb_Cluster"
+		  },
+		  {
+			"children": [],
+			"id": 39,
+			"name": "Bomb_Antisubmarine"
+		  },
+		  {
+			"children": [],
+			"id": 40,
+			"name": "Bomb_ODAB"
+		  },
+		  {
+			"children": [],
+			"id": 41,
+			"name": "Bomb_Fire"
+		  },
+		  {
+			"children": [],
+			"id": 42,
+			"name": "Bomb_Nuclear"
+		  },
+		  {
+			"children": [],
+			"id": 49,
+			"name": "Bomb_Lighter"
+		  }
+		]
+	  },
+	  {
+		"name": "shell",
+		"id": 6,
+		"children": []
+	  },
 	 {
 		"children": [
+		{
+			"children": [
+			],
+			"id": 44,
+			"name": "Control_Cont"
+		},
+		{
+			"children": [
+			],
+			"id": 45,
+			"name": "wJam_Cont"
+		},
+		{
+			"children": [
+			],
+			"id": 46,
+			"name": "Cannon_Cont"
+		},
+		{
+			"children": [
+			],
+			"id": 47,
+			"name": "Support"
+		},
+		{
+			"children": [
+			],
+			"id": 48,
+			"name": "Snare_Cont"
+		},
+		{
+			"children": [
+			],
+			"id": 50,
+			"name": "Smoke_Cont"
+		}
 		],
 		"id": 15,
 		"name": "Container"
 	 } ,
-    {
-        "children": [
-        ],
-        "id": 7,
-        "name": "NURS"
-    },
-    {
-        "children": [
-        ],
-        "id": 8,
-        "name": "Torpedo"
-    }
+	 {
+		"children": [
+		{
+			"children": [
+			],
+			"id": 32,
+			"name": "Container"
+		},
+		{
+			"children": [
+			{
+				"id": 144,
+				"name": "HYDRA_70_MK1"
+			},
+			{
+				"id": 145,
+				"name": "HYDRA_70_MK5"
+			},
+			{
+				"id": 146,
+				"name": "HYDRA_70_MK61"
+			},
+			{
+				"id": 147,
+				"name": "HYDRA_70_M151"
+			},
+			{
+				"id": 148,
+				"name": "HYDRA_70_M156"
+			},
+			{
+				"id": 149,
+				"name": "HYDRA_70_WTU1B"
+			},
+			{
+				"id": 150,
+				"name": "HYDRA_70_M274"
+			},
+			{
+				"id": 151,
+				"name": "HYDRA_70_M257"
+			},
+			{
+				"id": 152,
+				"name": "HYDRA_70_M278"
+			},
+			{
+				"id": 153,
+				"name": "P_9M133"
+			}
+			],
+			"id": 33,
+			"name": "Rocket"
+		}
+		],
+		"id": 7,
+		"name": "NURS"
+	},
+	{
+		"children": [
+		],
+		"id": 8,
+		"name": "Torpedo"
+	}
     ]
   }
 ]

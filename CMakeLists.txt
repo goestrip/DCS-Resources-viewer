@@ -95,6 +95,8 @@ set(DATA_FILES
     src/mission.cpp
     src/inventory.h
     src/inventory.cpp
+    src/coalition.h
+    src/coalition.cpp
     )
 source_group ("data" FILES ${DATA_FILES})
 

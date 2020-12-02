@@ -139,6 +139,7 @@ QString ObjectDBWrapper::getNameForLevels(int level1, int level2, int level3, in
 {
     QString  name;
     QTextStream out(&name);
+    bool isResolved = false;
     if(items.contains(level1))
     {
         DbItem item1 = items.value(level1);
@@ -153,9 +154,11 @@ QString ObjectDBWrapper::getNameForLevels(int level1, int level2, int level3, in
                 if(item3.getChildren(level4, item4))
                 {
                     out << item4.getName();
+                     isResolved = true;
                 }
                 else if(item3.getSubName(level4, subName) || item2.getSubName(level4, subName)) {
                     out << subName;
+                    isResolved = true;
                 }
                 else out << item3.getName();
             }
@@ -163,7 +166,10 @@ QString ObjectDBWrapper::getNameForLevels(int level1, int level2, int level3, in
         }
         else out << item1.getName();
     }
-    out<<" "<<level1<<"-"<<level2<<"-"<<level3<<"-"<<level4;
+    if(!isResolved)
+    {
+        out<<" "<<level1<<"-"<<level2<<"-"<<level3<<"-"<<level4;
+    }
     return name;
 }
 

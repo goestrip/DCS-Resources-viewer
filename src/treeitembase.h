@@ -16,7 +16,7 @@ public:
 
     TreeItemBase *child(int row);
     int childCount() const;
-    virtual int columnCount() const ;
+    virtual int columnCount() const =0;
     virtual QVariant data(int column) const;
     int row() const;
     TreeItemBase *parentItem();
@@ -34,6 +34,7 @@ private:
 class TreeItemRoot : public TreeItemBase
 {
     public:
+    virtual int columnCount() const {return 5;};
     virtual void accept(TreeItemVisitor* visitor) override;
 };
 

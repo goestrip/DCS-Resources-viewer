@@ -30,6 +30,20 @@ const std::string Day = "Day";
 const std::string Year = "Year";
 const std::string Month = "Month";
 
+const std::string coalition = "coalition";
+const std::string blue = "blue";
+const std::string red = "red";
+const std::string country = "country";
+const std::string vehicle = "vehicle";
+const std::string group = "group";
+const std::string units = "units";
+const std::string type = "type";
+
+
+
+
+//const std::string
+
 }
 
 #endif // WAREHOUSECONSTANTS_H

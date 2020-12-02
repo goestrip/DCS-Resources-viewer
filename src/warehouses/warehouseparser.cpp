@@ -126,5 +126,6 @@ ObjectDBWrapper WarehouseParser::loadDbItem()
     {
         return dbParser.parse(jsonDbFile.readAll());
     }
+    else return ObjectDBWrapper(QMap<int, DbItem>());
 }
 

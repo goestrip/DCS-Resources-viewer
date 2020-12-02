@@ -22,7 +22,7 @@ QVariant TreeItemAirfield::data(int column) const
     if(0 == column){
         return m_airfield->name();
     }
-    if(1 == column){
+    else if(1 == column){
         if(m_airfield->fuelReserve().isUnlimited)
         {
             return QString("fuel: ") + QChar(0x221E);
@@ -31,7 +31,7 @@ QVariant TreeItemAirfield::data(int column) const
                 + QString::number(m_airfield->fuelReserve().getTotal())
                 +QString("t");
     }
-    if(2 == column){
+    else if(2 == column){
         if(m_airfield->choppers().isUnlimited()){
             return QString("choppers: ") + QChar(0x221E);
         }
@@ -39,7 +39,7 @@ QVariant TreeItemAirfield::data(int column) const
             return QString("choppers: ") + QString::number(m_airfield->choppers().count());
         }
     }
-    if(3 == column){
+    else if(3 == column){
         if(m_airfield->planes().isUnlimited()){
             return QString("planes: ") + QChar(0x221E);
         }
@@ -48,12 +48,22 @@ QVariant TreeItemAirfield::data(int column) const
         }
 
     }
+    else if(4 == column)
+    {
+        if(m_airfield->equipment().isUnlimited()){
+            return QString("weapons: ") + QChar(0x221E);
+        }
+        else{
+            return QString("weapons: ") + QString::number(m_airfield->equipment().count());
+        }
+
+    }
     else return QVariant::Invalid;
 }
 
 int TreeItemAirfield::columnCount() const
 {
-    return 4;
+    return 5;
 }
 
 void TreeItemAirfield::accept(TreeItemVisitor *visitor)
