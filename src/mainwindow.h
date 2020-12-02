@@ -10,6 +10,7 @@ QT_END_NAMESPACE
 
 
 class AirfieldTreeModel;
+class CoalitionTreeModel;
 class InventoryModel;
 class QSortFilterProxyModel ;
 
@@ -30,6 +31,7 @@ private:
     Ui::MainWindow *ui;
     AirfieldTreeModel* airfieldsTreeModel;
     InventoryModel* inventoryModel;
+    CoalitionTreeModel* coalitionTreeModel;
     QSortFilterProxyModel *inventoryProxyModel;
 
    DataManager  m_dataManager;

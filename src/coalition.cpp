@@ -18,3 +18,8 @@ void Coalition::addVehicle(Coalition::VEHICLE_TYPE type, const QString &typeName
         groundVehicles.insert(typeName, groundVehicles.value(typeName, 0) + 1);
     }
 }
+
+const VehicleInventory &Coalition::getGroundVehicles() const
+{
+    return groundVehicles;
+}

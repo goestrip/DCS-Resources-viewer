@@ -110,22 +110,39 @@ set(UI_FILES
     )
 source_group("ui" FILES ${UI_FILES})
 
-set(UI_MODEL
+
+set(UI_AIRFIELD_MODEL
     src/airfieldtreemodel.h
     src/airfieldtreemodel.cpp
-    src/treeitembase.h
-    src/treeitembase.cpp
     src/treeitemairfield.h
     src/treeitemairfield.cpp
     src/treeitemfuel.h
     src/treeitemfuel.cpp
     src/treeitemairframe.h
     src/treeitemairframe.cpp
+    src/treeitemequipment.h
+    src/treeitemequipment.cpp
+    )
+source_group("models\\airfield" FILES ${UI_AIRFIELD_MODEL})
+
+set(UI_COALITION_MODEL
+    src/coalitiontreemodel.h
+    src/coalitiontreemodel.cpp
+    src/treeitemcoalition.h
+    src/treeitemcoalition.cpp
+    src/treeitemvehicleinventory.cpp
+    src/treeitemvehicleinventory.h
+    )
+source_group("models\\coalition" FILES ${UI_COALITION_MODEL})
+
+set(UI_MODEL
+    src/treeitembase.h
+    src/treeitembase.cpp
     src/treeitemvisitor.h
     src/inventorymodel.h
     src/inventorymodel.cpp
-    src/treeitemequipment.h
-    src/treeitemequipment.cpp
+
+
     )
 source_group("models" FILES ${UI_MODEL})
 
@@ -138,6 +155,8 @@ add_executable(DcsResourcesViewer
     ${LUABRIDGE_HEADERS}
     ${MISSION_FILES}
     ${UI_MODEL}
+    ${UI_AIRFIELD_MODEL}
+    ${UI_COALITION_MODEL}
     resources.qrc
  )
 

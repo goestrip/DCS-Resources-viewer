@@ -9,6 +9,7 @@
 #include "airfieldtreemodel.h"
 #include "selectionvisitor.h"
 #include "inventorymodel.h"
+#include "coalitiontreemodel.h"
 
 //#include "lua.hpp"
 //#include "LuaBridge.h"
@@ -43,6 +44,7 @@ void MainWindow::openMizFile()
     else{
         airfieldsTreeModel = new AirfieldTreeModel(m_dataManager.getAirfields(), this);
         ui->AirfieldTreeView->setModel(airfieldsTreeModel);
+        ui->AirfieldTreeView->resizeColumnToContents(0);
         QItemSelectionModel* treeViewSelectionModel= ui->AirfieldTreeView->selectionModel();
         connect(treeViewSelectionModel, &QItemSelectionModel::currentChanged, this, & MainWindow::onTreeViewSelectionChanged);
 
@@ -55,8 +57,12 @@ void MainWindow::openMizFile()
         ui->AircraftTableView->horizontalHeader()->setSectionsClickable(true);
         ui->AircraftTableView->sortByColumn(1, Qt::SortOrder::AscendingOrder);
 
+
         ui->label_mission_date->setText(m_dataManager.getMissionDate().toString());
 
+
+        coalitionTreeModel = new CoalitionTreeModel(m_dataManager.getMission());
+        ui->CoalitionTreeView->setModel(coalitionTreeModel );
 
     }
 
@@ -73,6 +79,8 @@ void MainWindow::onTreeViewSelectionChanged(const QModelIndex &current, const QM
         if(nullptr != visitor.getInventory())
         {
             inventoryModel->setCustomData(*visitor.getInventory());
+             ui->AircraftTableView->resizeColumnToContents(0);
+             ui->AircraftTableView->resizeColumnToContents(1);
         }
     }
 

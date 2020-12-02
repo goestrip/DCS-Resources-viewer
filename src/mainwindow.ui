@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>800</height>
+    <width>1121</width>
+    <height>803</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,14 +47,48 @@
      </layout>
     </item>
     <item>
+     <layout class="QHBoxLayout" name="column_headers" stretch="4,3,3">
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_inventory">
+        <property name="text">
+         <string>Inventory</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_groundUnits">
+        <property name="text">
+         <string>Ground forces</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,3">
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,3,3">
         <item>
          <widget class="QTreeView" name="AirfieldTreeView"/>
         </item>
         <item>
          <widget class="QTableView" name="AircraftTableView"/>
+        </item>
+        <item>
+         <widget class="QTreeView" name="CoalitionTreeView"/>
         </item>
        </layout>
       </item>
@@ -67,7 +101,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>1121</width>
      <height>21</height>
     </rect>
    </property>

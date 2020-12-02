@@ -51,3 +51,8 @@ QDate DataManager::getMissionDate() const
     }
     else return QDate();
 }
+
+TMission DataManager::getMission() const
+{
+    return m_mission;
+}

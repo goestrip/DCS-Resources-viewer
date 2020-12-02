@@ -59,10 +59,3 @@ QVariant InventoryModel::headerData(int section, Qt::Orientation orientation, in
     return QVariant::Invalid;
 }
 
-
-
-
-
-void InventoryModel::sort(int column, Qt::SortOrder order)
-{
-}

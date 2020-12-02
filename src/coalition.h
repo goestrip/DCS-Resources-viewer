@@ -16,7 +16,7 @@ public:
     SIDE coalition() const;
     void addVehicle(VEHICLE_TYPE type, const QString& typeName);
 
-
+    const VehicleInventory& getGroundVehicles()const;
 
 private:
     const SIDE  m_coalition;

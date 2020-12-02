@@ -16,6 +16,8 @@ public:
     const TAirfields& getAirfields()const;
     QDate   getMissionDate()const;
 
+    TMission getMission() const;
+
 private:
     TMizInterface   m_mizInterface;
 

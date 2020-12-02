@@ -117,12 +117,15 @@ void MissionParser::parseVehicles(LuaRef& luaCountry, Coalition &coalition)
             && !luaCountry[DCS_CST::vehicle].isNil()
             && !luaCountry[DCS_CST::vehicle][DCS_CST::group].isNil())
     {
-        for(auto&& pair : pairs(luaCountry[DCS_CST::vehicle][DCS_CST::group]))
+        for(auto&& group : pairs(luaCountry[DCS_CST::vehicle][DCS_CST::group]))
         {
-            if(!pair.second[DCS_CST::type].isNil() && pair.second[DCS_CST::type].isString())
+            for(auto&& unit: pairs(group.second[DCS_CST::units]))
             {
-                QString unitType = QString::fromStdString(pair.second[DCS_CST::type].tostring());
-                coalition.addVehicle(Coalition::GROUND, unitType);
+                if(!unit.second[DCS_CST::type].isNil() && unit.second[DCS_CST::type].isString())
+                {
+                    QString unitType = QString::fromStdString(unit.second[DCS_CST::type].tostring());
+                    coalition.addVehicle(Coalition::GROUND, unitType);
+                }
             }
         }
     }
